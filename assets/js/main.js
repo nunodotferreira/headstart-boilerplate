@@ -5,23 +5,30 @@
 // Underscore is bundled in with ender, so just require it
 // Comment out this line when using the separated Underscore file,
 // eg. when using jQuery
-var _ = require('underscore');
+//var _ = require('underscore');
 
 // Document -------------------------------------------------------------------
 
 // When using jQuery, use
-// $(document).ready(function () {
+$(document).ready(function () {
 
-$.domReady(function () {
+//$.domReady(function () {
 
-	log('## Document ready');
+	//log('## Document ready');
+	log('_## Main script running_');
 
 	// VARS -------------------------------------------------------------------
 	//
 
+	//var
+		//$window = $(window),
+		//$body = $('body')
+	//;
+
 	var
-		$window = $(window),
-		$body = $('body')
+		fileName = _.last(window.location.href.split('/')),
+		$localLink = $('a[href*="' + fileName + '#"]'),
+		$scrollTarget = $('html, body')
 	;
 
 	// ACTIONS ----------------------------------------------------------------
